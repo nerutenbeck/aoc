@@ -1,0 +1,20 @@
+#%%
+with open('data/day_1.txt') as input:
+    data = input.read()
+
+# %%
+elves_raw = data.split('\n\n')
+
+# %%
+elf_list = [e.split('\n') for e in elves_raw]
+
+# %%
+int_list = [[int(c) for c in e if c != ''] for e in elf_list]
+# %%
+list_sums = [sum(c) for c in int_list]
+# %%
+max(list_sums)
+# %%
+sum(sorted(list_sums)[-3:])
+
+# %%
