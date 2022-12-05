@@ -76,10 +76,8 @@ class ElfCrates:
             raise Exception("The only models the elves have are 9000 and 9001!")
 
         for move in self.moves:
-            stacks_updated = mover(
-                stacks = stacks_updated,
-                move = move
-            )
+            stacks_updated = mover(stacks = stacks_updated, move = move)
+        
         return stacks_updated
 
 
