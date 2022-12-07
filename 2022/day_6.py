@@ -1,8 +1,8 @@
 #%% example signal
 
-def find_marker(signal_string, signal_length):
-    for s in range(signal_length, len(signal_string) + 1):
-        start = s - signal_length
+def find_marker(signal_string, marker_length):
+    for s in range(marker_length, len(signal_string) + 1):
+        start = s - marker_length
         stop = s
         target = signal_string[start : stop]
         target_set = set(target)
@@ -39,9 +39,9 @@ class ElfSignal:
 
         self.signal_string = signal_string
 
-    def find_marker(self, signal_length):
-        for s in range(signal_length, len(self.signal_string) + 1):
-            start = s - signal_length
+    def find_marker(self, marker_length):
+        for s in range(marker_length, len(self.signal_string) + 1):
+            start = s - marker_length
             stop = s
             target = self.signal_string[start : stop]
             target_set = set(target)
@@ -53,10 +53,12 @@ class ElfSignal:
 
 signal = ElfSignal(input_path = 'data/day_6.txt')
 # %%
-packet_marker = signal.find_marker(signal_length = 4)
+packet_marker = signal.find_marker(marker_length = 4)
 packet_marker
 
 #%% 
 
-message_marker = signal.find_marker(signal_length = 14)
+message_marker = signal.find_marker(marker_length = 14)
 message_marker
+
+# %%
